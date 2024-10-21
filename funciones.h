@@ -6,3 +6,5 @@ void encontrarProductoMasCaro(char nombres[10][50], float precios[10], int numPr
 void encontrarProductoMasBarato(char nombres[10][50], float precios[10], int numProductos);
 float calcularPrecioPromedio(float precios[10], int numProductos);
 void buscarProducto(char nombres[10][50], float precios[10], int numProductos);
+void agregarProducto(char producto[10], double precio);
+double calcularTotal();
