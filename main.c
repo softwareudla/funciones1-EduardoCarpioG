@@ -14,7 +14,7 @@ int main() {
     // Verificar que el número de productos no exceda el máximo permitido
     if (numProductos > MAX_PRODUCTOS) {
         printf("El numero de productos no puede ser mayor que %d.\n", MAX_PRODUCTOS);
-        return 1; // Salir del programa con un código de error
+        return 1;
     }
 
     // Leer los productos

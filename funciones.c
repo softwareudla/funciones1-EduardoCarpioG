@@ -53,7 +53,6 @@ void encontrarProductoMasBarato(char nombres[10][50], float precios[10], int num
     }
     printf("Producto mas barato: %s, Precio: %.2f\n", nombreProducto, minPrecio);
 }
-
 float calcularPrecioPromedio(float precios[10], int numProductos) {
     float total = calcularPrecioTotal(precios, numProductos);
     return total / numProductos;
