@@ -3,7 +3,7 @@
 #include "funciones.h"
 
 #define MAX_NOMBRE 50
-#define MAX_PRODUCTOS 100
+#define MAX_PRODUCTOS 10
 
 int main() {
     char nombres[MAX_PRODUCTOS][MAX_NOMBRE];
@@ -12,9 +12,15 @@ int main() {
 
     do {
         printf("Ingrese el numero de productos (maximo %d): ", MAX_PRODUCTOS);
-        scanf("%d", &numProductos);
-        while (getchar() != '\n'); // Limpiar el buffer
+        if (scanf("%d", &numProductos) != 1) {
+            printf("Entrada inválida. Por favor, ingrese un número entero.\n");
+            while (getchar() != '\n');
+        } else if (numProductos <= 0 || numProductos > MAX_PRODUCTOS) {
+            printf("Entrada inválida. Por favor, ingrese un número entre 1 y %d.\n", MAX_PRODUCTOS);
+        }
     } while (numProductos <= 0 || numProductos > MAX_PRODUCTOS);
+
+    getchar();
 
     leerProductos(nombres, precios, numProductos);
     imprimirInventario(nombres, precios, numProductos);
