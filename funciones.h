@@ -1,10 +1,11 @@
-
-void leerProductos(char nombres[10][50], float precios[10], int numProductos);
-void imprimirInventario(char nombres[10][50], float precios[10], int numProductos);
-float calcularPrecioTotal(float precios[10], int numProductos);
-void encontrarProductoMasCaro(char nombres[10][50], float precios[10], int numProductos);
-void encontrarProductoMasBarato(char nombres[10][50], float precios[10], int numProductos);
-float calcularPrecioPromedio(float precios[10], int numProductos);
-void buscarProducto(char nombres[10][50], float precios[10], int numProductos);
-void agregarProducto(char producto[10], double precio);
-double calcularTotal();
+#define MAX_NOMBRE 50
+#define MAX_PRODUCTOS 100
+void leerProductos(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[], int numProductos);
+void imprimirInventario(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[MAX_PRODUCTOS], int numProductos);
+float calcularPrecioTotal(float precios[MAX_PRODUCTOS], int numProductos);
+void encontrarProductoMasCaro(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[MAX_PRODUCTOS], int numProductos);
+void encontrarProductoMasBarato(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[MAX_PRODUCTOS], int numProductos);
+float calcularPrecioPromedio(float precios[MAX_PRODUCTOS], int numProductos);
+void buscarProducto(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[MAX_PRODUCTOS], int numProductos);
+void agregarProducto(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[], int *numProductos, char producto[MAX_NOMBRE], float precio);
+double calcularTotal(float precios[MAX_PRODUCTOS], int numProductos);

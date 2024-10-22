@@ -1,20 +1,20 @@
 #include <stdio.h>
+#include <string.h>
 #include "funciones.h"
 
-#define MAX_PRODUCTOS 10
+#define MAX_NOMBRE 50
+#define MAX_PRODUCTOS 100
 
 int main() {
-    char nombres[MAX_PRODUCTOS][50];
+    char nombres[MAX_PRODUCTOS][MAX_NOMBRE];
     float precios[MAX_PRODUCTOS];
     int numProductos;
 
-    printf("Ingrese el numero de productos (maximo %d): ", MAX_PRODUCTOS);
-    scanf("%d", &numProductos);
-
-    if (numProductos > MAX_PRODUCTOS) {
-        printf("El numero de productos no puede ser mayor que %d.\n", MAX_PRODUCTOS);
-        return 1;
-    }
+    do {
+        printf("Ingrese el numero de productos (maximo %d): ", MAX_PRODUCTOS);
+        scanf("%d", &numProductos);
+        while (getchar() != '\n'); // Limpiar el buffer
+    } while (numProductos <= 0 || numProductos > MAX_PRODUCTOS);
 
     leerProductos(nombres, precios, numProductos);
     imprimirInventario(nombres, precios, numProductos);
