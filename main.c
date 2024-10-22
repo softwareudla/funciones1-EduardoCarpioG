@@ -13,10 +13,10 @@ int main() {
     do {
         printf("Ingrese el numero de productos (maximo %d): ", MAX_PRODUCTOS);
         if (scanf("%d", &numProductos) != 1) {
-            printf("Entrada inválida. Por favor, ingrese un número entero.\n");
+            printf("Entrada invalida. Por favor, ingrese un numero entero.\n");
             while (getchar() != '\n');
         } else if (numProductos <= 0 || numProductos > MAX_PRODUCTOS) {
-            printf("Entrada inválida. Por favor, ingrese un número entre 1 y %d.\n", MAX_PRODUCTOS);
+            printf("Entrada invalida. Por favor, ingrese un numero entre 1 y %d.\n", MAX_PRODUCTOS);
         }
     } while (numProductos <= 0 || numProductos > MAX_PRODUCTOS);
 
@@ -31,6 +31,5 @@ int main() {
     float promedio = calcularPrecioPromedio(precios, numProductos);
     printf("Precio promedio de los productos: %.2f\n", promedio);
     buscarProducto(nombres, precios, numProductos);
-    
     return 0;
 }

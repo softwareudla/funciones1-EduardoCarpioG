@@ -9,19 +9,19 @@ void leerProductos(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[], int
     for (int i = 0; i < numProductos; i++) {
         printf("Ingrese el nombre del producto %d: ", i + 1);
         fgets(nombres[i], MAX_NOMBRE, stdin);
-        nombres[i][strcspn(nombres[i], "\n")] = '\0'; // Eliminar el salto de línea
+        nombres[i][strcspn(nombres[i], "\n")] = '\0'; 
         
-        int entradaValida = 0; // Variable para controlar la validez de la entrada
+        int entradaValida = 0; 
         while (!entradaValida) {
             printf("Ingrese el precio del producto %d: ", i + 1);
             if (scanf("%f", &precios[i]) == 1 && precios[i] > 0) {
-                entradaValida = 1; // Marcar que la entrada es válida
+                entradaValida = 1;
             } else {
                 printf("Entrada invalida. ");
-                while (getchar() != '\n'); // Limpiar el buffer
+                while (getchar() != '\n'); 
             }
         }
-        getchar(); // Limpiar el buffer después de leer el precio
+        getchar();
     }
 }
 
@@ -47,7 +47,7 @@ void encontrarProductoMasCaro(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float pre
             index = i;
         }
     }
-    printf("Producto más caro: %s - %.2f\n", nombres[index], precios[index]);
+    printf("Producto mas caro: %s - %.2f\n", nombres[index], precios[index]);
 }
 
 void encontrarProductoMasBarato(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[MAX_PRODUCTOS], int numProductos) {
@@ -57,7 +57,7 @@ void encontrarProductoMasBarato(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float p
             index = i;
         }
     }
-    printf("Producto más barato: %s - %.2f\n", nombres[index], precios[index]);
+    printf("Producto mas barato: %s - %.2f\n", nombres[index], precios[index]);
 }
 
 float calcularPrecioPromedio(float precios[MAX_PRODUCTOS], int numProductos) {
@@ -90,10 +90,10 @@ void buscarProducto(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[MAX_P
             printf("Producto no encontrado.\n");
         }
 
-        printf("¿Desea buscar otro producto (s/n)? ");
+        printf("Desea buscar otro producto (s/n) ");
         scanf(" %c", &respuesta);
         getchar(); // Limpiar el buffer
     } while (respuesta == 's' || respuesta == 'S');
 
-    printf("Finalizando búsqueda.\n");
+    printf("Finalizando busqueda.\n");
 }

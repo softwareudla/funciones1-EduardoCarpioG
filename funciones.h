@@ -1,6 +1,5 @@
 #define MAX_NOMBRE 50
 #define MAX_PRODUCTOS 10
-
 void leerProductos(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[], int numProductos);
 void imprimirInventario(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[MAX_PRODUCTOS], int numProductos);
 float calcularPrecioTotal(float precios[MAX_PRODUCTOS], int numProductos);
