@@ -8,7 +8,7 @@
 int main() {
     char nombres[MAX_PRODUCTOS][MAX_NOMBRE];
     float precios[MAX_PRODUCTOS];
-    int numProductos;
+    int numProductos = 0;
 
     do {
         printf("Ingrese el numero de productos (maximo %d): ", MAX_PRODUCTOS);
@@ -31,5 +31,6 @@ int main() {
     float promedio = calcularPrecioPromedio(precios, numProductos);
     printf("Precio promedio de los productos: %.2f\n", promedio);
     buscarProducto(nombres, precios, numProductos);
+    
     return 0;
 }

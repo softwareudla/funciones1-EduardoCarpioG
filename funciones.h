@@ -7,5 +7,4 @@ void encontrarProductoMasCaro(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float pre
 void encontrarProductoMasBarato(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[MAX_PRODUCTOS], int numProductos);
 float calcularPrecioPromedio(float precios[MAX_PRODUCTOS], int numProductos);
 void buscarProducto(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[MAX_PRODUCTOS], int numProductos);
-void agregarProducto(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[], int *numProductos, char producto[MAX_NOMBRE], float precio);
-float calcularTotal(float precios[MAX_PRODUCTOS], int numProductos);
+void agregarProducto(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[], int numProductos, char producto[MAX_NOMBRE], float precio);

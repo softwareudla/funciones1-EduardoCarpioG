@@ -2,9 +2,6 @@
 #include <string.h>
 #include "funciones.h"
 
-#define MAX_NOMBRE 50
-#define MAX_PRODUCTOS 10
-
 void leerProductos(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[], int numProductos) {
     for (int i = 0; i < numProductos; i++) {
         printf("Ingrese el nombre del producto %d: ", i + 1);
@@ -73,16 +70,16 @@ void buscarProducto(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[MAX_P
     char respuesta;
 
     do {
-        int encontrado = 0; // Variable para verificar si se encontró el producto
+        int encontrado = 0;
         printf("Ingrese el nombre del producto a buscar: ");
         fgets(producto, MAX_NOMBRE, stdin);
-        producto[strcspn(producto, "\n")] = '\0'; // Eliminar el salto de línea
+        producto[strcspn(producto, "\n")] = '\0';
 
         for (int i = 0; i < numProductos; i++) {
             if (strcmp(nombres[i], producto) == 0) {
                 printf("Producto encontrado: %s - %.2f\n", nombres[i], precios[i]);
-                encontrado = 1; // Marcar que se encontró el producto
-                break; // Salir del bucle una vez encontrado
+                encontrado = 1;
+                break;
             }
         }
 
@@ -90,9 +87,9 @@ void buscarProducto(char nombres[MAX_PRODUCTOS][MAX_NOMBRE], float precios[MAX_P
             printf("Producto no encontrado.\n");
         }
 
-        printf("Desea buscar otro producto (s/n) ");
+        printf("Desea buscar otro producto? (s/n): ");
         scanf(" %c", &respuesta);
-        getchar(); // Limpiar el buffer
+        while (getchar() != '\n');
     } while (respuesta == 's' || respuesta == 'S');
 
     printf("Finalizando busqueda.\n");
